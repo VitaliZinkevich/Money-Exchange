@@ -5,35 +5,35 @@ module.exports = function makeExchange(currency) {
     var totalval = {};
 
     
-    totalval=(currency>10000)? true:false;
-    {
+    if (currency>10000)    {
       return {error :"You are rich, my friend! We don't have so much coins for exchange"};
 }
-    totalval=(currency<=0)? true:false; {
+    if (currency<=0)  {
+      /*NOTHING */
         return totalval;
     }
 
-    totalval=(currency>=50)? true:false; {
+    if (currency>50) {
        totalval.H = parseInt(currency/50);
         currency = currency-totalval.H*50;
     }
 
-    totalval=(currency>=25)? true:false; {
+    if (currency>25)  {
       totalval.Q = parseInt(currency/25);
         currency = currency-totalval.Q*25;
     }
 
-    totalval=(currency>=10)? true:false; {
+   if  (currency>10) {
       totalval.D = parseInt(currency/10);
         currency = currency-totalval.D*10;
     }
 
-    totalval=(currency>=5)? true:false; {
+   if (currency>5) {
       totalval.N = parseInt(currency/5);
         currency = currency-totalval.N*5;
     }
 
-    totalval=(currency>=1)? true:false; {
+   if (currency>1)  {
       totalval.P = parseInt(currency/1);
         currency = currency-totalval.P*1;
     }
